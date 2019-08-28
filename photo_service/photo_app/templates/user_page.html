@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        User page
+    </title>
+</head>
+<body>
+    <form action="" method="POST" enctype="multipart/form-data">
+        {%csrf_token%}
+        <input type="text" name="description">
+        <input type="file" name="picture">
+        <input type="submit" value="Submit">
+    </form>
+{%for picture in pictures%}
+    <img src="{{picture.image.url}}" alt="{{picture.description}}">
+{%endfor%}
+</body>
+</html>
